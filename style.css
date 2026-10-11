@@ -3,20 +3,44 @@
   src: local('Gellix');
 }
 
+:root {
+  --bg: #090c16;
+  --text: #f3f4f9;
+  --muted: #8c93ad;
+  --accent: #c9a063;
+  --accent-bright: #e3c285;
+  --rule: rgba(201, 160, 99, 0.35);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  background: #05050f;
-  font-family: 'Gellix', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-  color: #f2f2f8;
+html {
+  overflow-x: hidden;
 }
 
-/* Static starfield, built from three layered box-shadow dot fields. */
+html, body {
+  height: 100%;
+  background: var(--bg);
+  font-family: 'Gellix', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: var(--text);
+}
+
+a {
+  color: var(--accent-bright);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--accent-bright);
+  outline-offset: 3px;
+}
+
+/* ---------- Starfield (static box-shadow dot field) ---------- */
+
 .stars,
 .stars2,
 .stars3 {
@@ -29,6 +53,9 @@ html, body {
   background: transparent;
   z-index: 0;
 }
+
+.stars2 { width: 2px; height: 2px; }
+.stars3 { width: 2px; height: 2px; }
 
 .stars {
   box-shadow:
@@ -257,69 +284,267 @@ html, body {
     43vw 85vh 0 rgba(255,255,255,0.94);
 }
 
-.stars2 { width: 2px; height: 2px; }
-.stars3 { width: 2px; height: 2px; }
+/* ---------- Astrolabe emblem ---------- */
 
-.page {
+.emblem {
+  display: block;
+  overflow: visible;
+}
+
+.emblem-ring-outer {
+  fill: none;
+  stroke: var(--accent);
+  stroke-opacity: 0.32;
+  stroke-width: 1;
+}
+
+.emblem-ring-inner {
+  fill: none;
+  stroke: var(--accent);
+  stroke-opacity: 0.18;
+  stroke-width: 1;
+}
+
+.emblem-orbit {
+  fill: none;
+  stroke: #ffffff;
+  stroke-opacity: 0.07;
+  stroke-width: 1;
+}
+
+.emblem-ticks-minor line {
+  stroke: #ffffff;
+  stroke-opacity: 0.28;
+  stroke-width: 1.5;
+}
+
+.emblem-ticks-major line {
+  stroke: var(--accent);
+  stroke-opacity: 0.65;
+  stroke-width: 2;
+}
+
+.emblem-spark {
+  fill: var(--accent-bright);
+}
+
+/* ---------- Home page hero ---------- */
+
+.hero {
   position: relative;
   z-index: 1;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 24px;
-  padding-bottom: 72px;
+  padding-bottom: 88px;
 }
 
-.content {
-  max-width: 900px;
+.emblem--hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: min(74vmin, 560px);
+  height: min(74vmin, 560px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: emblem-reveal 1100ms ease-out both;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  text-align: center;
+  animation: content-reveal 900ms ease-out 150ms both;
 }
 
 .business-name {
   font-size: 22pt;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 18px;
-}
-
-.page-title {
-  font-size: 22pt;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 18px;
+  letter-spacing: 0.3px;
+  margin-bottom: 16px;
 }
 
 .tagline {
   font-size: 14pt;
   font-style: italic;
-  color: #cfd2e8;
-  margin-bottom: 32px;
+  font-weight: 400;
+  color: var(--muted);
   line-height: 1.5;
   white-space: nowrap;
 }
 
-.details, .body-text {
-  font-size: 14pt;
-  line-height: 1.8;
-  color: #e6e6f0;
+/* ---------- Contact / Privacy pages ---------- */
+
+.page {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  padding-bottom: 88px;
 }
 
-.details a, .body-text a {
-  color: #9fc2ff;
+.page-head {
+  animation: content-reveal 700ms ease-out both;
+}
+
+.emblem--mark {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 22px;
+}
+
+.page-title {
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-bottom: 18px;
+}
+
+.rule {
+  width: 40px;
+  height: 1px;
+  background: var(--rule);
+  margin: 0 auto 32px;
+}
+
+.page-body {
+  animation: content-reveal 700ms ease-out 100ms both;
+}
+
+.body-text {
+  font-size: 14pt;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.field-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.field-list--footnote {
+  margin-top: 36px;
+}
+
+.field dt {
+  font-size: 10pt;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.field dd {
+  font-size: 14pt;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.field dd a {
   text-decoration: none;
 }
 
-.details a:hover, .body-text a:hover {
+.field dd a:hover,
+.field dd a:focus-visible {
   text-decoration: underline;
 }
 
-.divider {
-  width: 60px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.3);
-  margin: 20px auto;
+/* ---------- Support form ---------- */
+
+.support-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: left;
 }
+
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-size: 10pt;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.form-field input,
+.form-field textarea {
+  font-family: inherit;
+  font-size: 14pt;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+  padding: 10px 12px;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible {
+  outline: 1px solid var(--accent-bright);
+  outline-offset: 2px;
+}
+
+.form-submit {
+  align-self: center;
+  margin-top: 4px;
+  font-family: inherit;
+  font-size: 14pt;
+  font-weight: 700;
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  border-radius: 4px;
+  padding: 12px 30px;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.form-submit:hover {
+  background: var(--accent-bright);
+}
+
+.form-submit:focus-visible {
+  outline: 1px solid var(--accent-bright);
+  outline-offset: 3px;
+}
+
+/* ---------- Footer nav ---------- */
 
 .footer-links {
   position: fixed;
@@ -329,22 +554,47 @@ html, body {
   width: 100%;
   text-align: center;
   font-size: 10pt;
-  color: #bfc2d6;
+  color: var(--muted);
 }
 
 .footer-links a {
-  color: #bfc2d6;
+  color: var(--muted);
   text-decoration: none;
   margin: 0 10px;
 }
 
-.footer-links a:hover {
-  color: #9fc2ff;
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--accent-bright);
   text-decoration: underline;
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes emblem-reveal {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.96); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes content-reveal {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 @media (max-width: 480px) {
   .tagline {
     white-space: normal;
+  }
+
+  .emblem--hero {
+    width: min(84vmin, 420px);
+    height: min(84vmin, 420px);
   }
 }
