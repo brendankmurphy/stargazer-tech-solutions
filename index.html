@@ -4,157 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stargazer Technology Solutions LLC</title>
-<style>
-  @font-face {
-    font-family: 'Gellix';
-    src: local('Gellix');
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html, body {
-    height: 100%;
-    background: #05050f;
-    font-family: 'Gellix', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-    color: #f2f2f8;
-  }
-
-  #starfield {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    display: block;
-    background: #05050f;
-  }
-
-  .page {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 24px;
-  }
-
-  .content {
-    max-width: 640px;
-  }
-
-  .business-name {
-    font-size: 22pt;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 18px;
-  }
-
-  .tagline {
-    font-size: 14pt;
-    font-style: italic;
-    color: #cfd2e8;
-    margin-bottom: 32px;
-    line-height: 1.5;
-  }
-
-  .details {
-    font-size: 14pt;
-    line-height: 1.8;
-    color: #e6e6f0;
-  }
-
-  .details a {
-    color: #9fc2ff;
-    text-decoration: none;
-  }
-
-  .details a:hover {
-    text-decoration: underline;
-  }
-
-  .divider {
-    width: 60px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.3);
-    margin: 20px auto;
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<canvas id="starfield"></canvas>
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
 
 <div class="page">
   <div class="content">
     <div class="business-name">Stargazer Technology Solutions LLC</div>
-    <div class="tagline">Creating unique solutions to combine video capture and timing results for sporting events.</div>
-    <div class="divider"></div>
-    <div class="details">
-      800 S Gaylord St, Denver, CO 80209<br>
-      720-239-2453<br>
-      <a href="mailto:brendan@stargazertechsolutions.com">brendan@stargazertechsolutions.com</a><br>
-      <br>
-      Hours: 8:00 AM &ndash; 5:00 PM Mountain Time
-    </div>
+    <div class="tagline">Creating unique solutions for sports enthusiasts</div>
   </div>
 </div>
 
-<script>
-(function () {
-  var canvas = document.getElementById('starfield');
-  var ctx = canvas.getContext('2d');
-  var stars = [];
-  var STAR_COUNT = 250;
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-
-  function makeStars() {
-    stars = [];
-    for (var i = 0; i < STAR_COUNT; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 1.4 + 0.2,
-        baseAlpha: Math.random() * 0.6 + 0.3,
-        phase: Math.random() * Math.PI * 2,
-        speed: Math.random() * 0.015 + 0.005
-      });
-    }
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    var t = Date.now() * 0.001;
-    for (var i = 0; i < stars.length; i++) {
-      var s = stars[i];
-      var twinkle = Math.sin(t * s.speed * 60 + s.phase) * 0.35;
-      var alpha = Math.max(0, Math.min(1, s.baseAlpha + twinkle));
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255, 255, 255, ' + alpha + ')';
-      ctx.fill();
-    }
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', function () {
-    resize();
-    makeStars();
-  });
-
-  resize();
-  makeStars();
-  draw();
-})();
-</script>
+<div class="footer-links">
+  <a href="contact.html">Contact and Support</a>
+  |
+  <a href="privacy.html">Privacy Policy</a>
+</div>
 
 </body>
 </html>
