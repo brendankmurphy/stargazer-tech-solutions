@@ -3,7 +3,7 @@ which permits free commercial use without attribution.
 
 hero-night-sky.jpg    Benjamin Voros     https://unsplash.com/photos/snow-mountain-under-stars-phIFdC6lA4E
 milky-way-path.jpg    Sebastian Knoll    https://unsplash.com/photos/milky-way-arching-over-a-rocky-mountain-path-IPCh5x1whiQ
-swimming.jpg          Arisa Chattasa     https://unsplash.com/photos/AZcNLJgO4XE
+swimming.jpg          Athar F            https://unsplash.com/photos/GGV3S2sjP08
 competition-pool.jpg  Mariusz Smenzyk    https://unsplash.com/photos/an-indoor-swimming-pool-with-blue-water-xs9r8fPUats
 track-and-field.jpg   Austris Augusts    https://unsplash.com/photos/running-track-with-numbered-lanes-52p1K0d0euM
 cross-country.jpg     Peter Robbins      https://unsplash.com/photos/a-large-group-of-people-running-in-a-field-GJb72h6FeKc
