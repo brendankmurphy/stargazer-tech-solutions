@@ -633,6 +633,23 @@ a {
   color: var(--muted);
 }
 
+.info-box + .info-box {
+  margin-top: 20px;
+}
+
+.info-box a {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.info-box a:hover {
+  text-decoration-color: var(--ink);
+}
+
 /* ---------- Prose (privacy policy) ---------- */
 
 .prose p {
