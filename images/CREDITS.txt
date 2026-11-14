@@ -1,0 +1,13 @@
+Photos are from Unsplash (https://unsplash.com) and used under the Unsplash License,
+which permits free commercial use without attribution.
+
+hero-night-sky.jpg    Benjamin Voros     https://unsplash.com/photos/snow-mountain-under-stars-phIFdC6lA4E
+milky-way-path.jpg    Sebastian Knoll    https://unsplash.com/photos/milky-way-arching-over-a-rocky-mountain-path-IPCh5x1whiQ
+swimming.jpg          Fiona Smallwood    https://unsplash.com/photos/three-men-swimming-in-swimming-pool-NHmWnOt2nsM
+competition-pool.jpg  Mariusz Smenzyk    https://unsplash.com/photos/an-indoor-swimming-pool-with-blue-water-xs9r8fPUats
+track-and-field.jpg   Austris Augusts    https://unsplash.com/photos/running-track-with-numbered-lanes-52p1K0d0euM
+cross-country.jpg     Peter Robbins      https://unsplash.com/photos/a-large-group-of-people-running-in-a-field-GJb72h6FeKc
+ultra-marathon.jpg    Venti Views        https://unsplash.com/photos/woman-running-on-rocky-trail-I1EWTM5mFEM
+triathlon.jpg         Algi               https://unsplash.com/photos/man-in-black-jacket-and-black-pants-standing-on-water-during-daytime-vmdJ6n8PIa8
+
+The Poppins typeface in /fonts is licensed under the SIL Open Font License (see fonts/OFL.txt).
