@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="t">
+  <title id="t">Stargazer Technology Solutions logo: the constellation Orion</title>
+  <defs>
+    <path id="spark" d="M16 4c.9 7 4.6 10.900 12 12-7.400 1.100-11.100 5-12 12-.9-7-4.600-10.900-12-12 7.400-1.100 11.100-5 12-12z"/>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#f2b33d" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#f2b33d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-red">
+      <stop offset="0" stop-color="#e5392f" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#e5392f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="40" fill="#0b1324"/>
+
+  <!-- constellation tilted 10 degrees counter-clockwise (sparkles kept upright) -->
+  <g transform="rotate(-10 100 100)">
+  <!-- soft glow behind the two brightest stars -->
+  <circle cx="58" cy="52" r="26" fill="url(#glow-red)"/>
+  <circle cx="142" cy="156" r="26" fill="url(#glow)"/>
+
+  <!-- constellation lines: head, shoulders, belt, legs, sword -->
+  <g fill="none" stroke="#f2b33d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".85">
+    <path d="M58 52L100 30L142 56"/>
+    <path d="M58 52L84 98"/>
+    <path d="M142 56L116 92"/>
+    <path d="M84 98L116 92"/>
+    <path d="M84 98L66 152"/>
+    <path d="M116 92L142 156"/>
+    <path d="M100 95L100 128" stroke-dasharray="1 7" stroke-width="3"/>
+  </g>
+
+  <!-- belt: Alnitak, Alnilam, Mintaka -->
+  <g fill="#ffffff">
+    <circle cx="84" cy="98" r="4.500"/>
+    <circle cx="100" cy="95" r="4.500"/>
+    <circle cx="116" cy="92" r="4.500"/>
+  </g>
+
+  <!-- minor stars: Meissa (head), Saiph, sword -->
+  <g fill="#f2b33d">
+    <circle cx="100" cy="30" r="3.500"/>
+    <circle cx="66" cy="152" r="4.500"/>
+    <circle cx="100" cy="116" r="2.500"/>
+    <circle cx="100" cy="128" r="3"/>
+  </g>
+
+  <!-- bright stars: Betelgeuse, Bellatrix, Rigel -->
+  <g fill="#f2b33d">
+    <use href="#spark" transform="translate(142 56) rotate(10) scale(.850) translate(-16 -16)"/>
+    <use href="#spark" transform="translate(142 156) rotate(10) scale(1.350) translate(-16 -16)"/>
+  </g>
+  <!-- Betelgeuse is red -->
+  <use href="#spark" fill="#e5392f" transform="translate(58 52) rotate(10) scale(1.350) translate(-16 -16)"/>
+  </g>
+</svg>
